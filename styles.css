@@ -1,0 +1,95 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.container {
+  height: 100%;
+  width: 100%;
+}
+.carousel {
+  margin-right: auto;
+  margin-left: auto;
+}
+.carousel-inner {
+  border-radius: 2rem;
+  box-shadow: 0px 0px 10px 1px black;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+}
+
+.ourAussiesView {
+  background: transparent;
+  position: absolute;
+  cursor: help;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 16;
+}
+.testPopUpBG {
+  background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 20;
+  visibility: hidden;
+}
+.testPopUp {
+  position: relative;
+  height: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  width: 70%;
+  background-color: rgb(213, 242, 234);
+  border-radius: 2rem;
+  z-index: 21;
+  visibility: hidden;
+}
+
+.testPopUp h1 {
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  text-shadow: 2px 2px 6px #7abfa3, -2px -2px 6px #ffffff;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.22),
+    rgba(255, 255, 255, 0.25)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.close:hover {
+  opacity: 1;
+}
+.close::before {
+  content: "\2715";
+  color: rgb(162, 255, 226);
+  font-size: 3rem;
+}
