@@ -226,7 +226,8 @@ div.row.popup__toprow > h2 {
       max-width: 100%;
     }
     .icon__links a > img {
-      height: 10%;
+      height: 5vh;
+      width: 10vw;
       margin-top: 17.5%;
     }
     #glass__frontground {
