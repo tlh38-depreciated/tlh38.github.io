@@ -223,6 +223,7 @@ div.row.popup__toprow > h2 {
         24% 7% 9%
         50% 10%;
       max-height: 100%;
+      max-width: 100%;
     }
     .icon__links a > img {
       height: 75%;
