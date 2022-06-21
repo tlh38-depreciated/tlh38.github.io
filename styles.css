@@ -6,22 +6,28 @@ body {
   min-width: 100vw;
 }
 #glass__background {
-  background: rgb(174, 238, 205);
-  background: linear-gradient(
-    332deg,
-    rgba(174, 238, 205, 1) 0%,
-    rgba(162, 225, 228, 1) 28%,
-    rgba(157, 183, 230, 1) 56%,
-    rgba(186, 153, 231, 1) 76%,
-    rgba(233, 148, 197, 1) 100%
-  );
+  background: #fc466b; /* fallback for old browsers */
+  background-image: -webkit-linear-gradient(to right, #fc466b, #3f5efb);
+  background-image: linear-gradient(to right, #fc466b, #3f5efb);
+  background-size: 300%;
+  animation: bg-animation 10s infinite alternate;
   height: 100vh;
   width: 100vw;
 }
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 #glass__frontground {
   background: rgba(255, 255, 255, 0.53);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
   border: 1px solid rgba(255, 255, 255, 0.13);
@@ -49,10 +55,20 @@ body {
 .introduction h3 {
   font-size: 1.25vw;
 }
+.introduction__text {
+  color: black;
+  background: linear-gradient(to right, #ffefba, #ffffff);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: bg-animation 10s infinite alternate;
+}
 #headerImage {
   margin: 0.5% auto 0 auto;
   height: 100%;
   border-radius: 100%;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
 }
 .carousel {
   margin-right: auto;
@@ -60,7 +76,7 @@ body {
 }
 .carousel-inner {
   border-radius: 15px;
-  box-shadow: 0px 0px 15px 2px black;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
 }
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.8);
@@ -110,9 +126,12 @@ body {
   transform: translateY(-50%);
   padding: 2rem;
   width: 70%;
-  background-color: whitesmoke;
-  box-shadow: 0px 0px 101px 11px black;
-  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
   z-index: 21;
   visibility: hidden;
 }
@@ -167,6 +186,8 @@ div.row.popup__toprow > h2 {
 .icon__links a > img {
   height: 75%;
   margin-top: 6%;
+  border-radius: 100%;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
 }
 
 @media screen {
@@ -244,6 +265,9 @@ div.row.popup__toprow > h2 {
     }
     .container {
       height: inherit;
+    }
+    #carousel-item_img_1 {
+      content: url("images/carousel-images/livestrongCycling/livestrongCycling_Thumbail_Mobile.png");
     }
   }
   @media only screen and (min-width: 468px) and (max-width: 900px) {
