@@ -221,6 +221,15 @@ div.row.popup__toprow > h2 {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
+#scnd_caro_header {
+  color: black;
+  background: linear-gradient(25deg, #f45491, #c480ff);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 @media screen {
   @media only screen and (max-width: 467px) {
     html,
