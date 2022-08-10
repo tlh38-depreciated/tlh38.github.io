@@ -300,6 +300,9 @@ div.row.popup__toprow > h2 {
     #carousel-item_img_1 {
       content: url("images/carousel-images/livestrongCycling/livestrongCycling_Thumbail_Mobile.png");
     }
+    #carousel-item_img_2 {
+      content: url("images/carousel-images/ptcRideShare/ptcRideShare_Thumbail_Mobile.png");
+    }
   }
   @media only screen and (min-width: 468px) and (max-width: 900px) {
     html,
