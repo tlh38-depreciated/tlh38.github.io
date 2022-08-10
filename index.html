@@ -53,17 +53,16 @@
               <li
                 data-target="#carousel-1"
                 data-slide-to="0"
-                class="active"
+                class="indicator active"
               ></li>
-              <li data-target="#carousel-1" data-slide-to="1"></li>
-              <li data-target="#carousel-1" data-slide-to="2"></li>
+              <li data-target="#carousel-1" data-slide-to="1" class="indicator"></li>
             </ol>
             <div class="carousel-inner" style="height: 100%">
               <div class="carousel-item active">
                 <img
                   class="d-block"
                   id="carousel-item_img_1"
-                  src="images/carousel-images/livestrongCycling/livestrongCycling_Thumbail.png"
+                  src="images/carousel-images/livestrongCycling/livestrongCycling_Thumbail_Mobile.png"
                   style="height: 100%; width: 100%;"
                   alt="Livestrong Cycling Logo"
                 />
@@ -74,23 +73,24 @@
                     College.
                   </p>
                 </div>
-                <div class="ourAussiesView"></div>
+                <div class="livestrongCyclingView"></div>
               </div>
               <div class="carousel-item">
                 <img
                   class="d-block"
-                  src="images/database.jpg"
+                  id="carousel-item_img_1"
+                  src="images/carousel-images/ptcRideShare/ptcRideShare_Thumbail_Mobile.png"
                   style="height: 100%; width: 100%;"
-                  alt="Database slide"
+                  alt="Pittsburgh Technical College RideShare Service"
                 />
-              </div>
-              <div class="carousel-item">
-                <img
-                  class="d-block"
-                  src="images/rideshare.jpg"
-                  style="height: 100%; width: 100%;"
-                  alt="Rideshare slide"
-                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Pittsburgh Technical College RideShare Service</h5>
+                  <p>
+                    This project was completed over the course of 3 months by a team of
+                    5 PTC students. <br> This project has a companion app for android as well.
+                  </p>
+                </div>
+                <div class="ptcRideShareView"></div>
               </div>
             </div>
             <a
@@ -124,7 +124,7 @@
       <div class="popup__background" id="popup_bg">
         <div class="popup__content" id="popup">
           <div class="row popup__toprow mb-4">
-            <h2>Livestrong Cycling Website</h2>
+            <h2 id="scnd_caro_header">Livestrong Cycling Website</h2>
             <div class="close__background">
               <p class="close__text">&#10005</p>
             </div>
@@ -137,24 +137,25 @@
         data-ride="carousel"
         data-interval="false"
       >
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" id="scnd_caro_indicators">
           <li
             data-target="#carousel-2"
             data-slide-to="0"
-            class="active"
+            class="indicator active"
           ></li>
-          <li data-target="#carousel-2" data-slide-to="1"></li>
-          <li data-target="#carousel-2" data-slide-to="2"></li>
-          <li data-target="#carousel-2" data-slide-to="3"></li>
-          <li data-target="#carousel-2" data-slide-to="4"></li>
-          <li data-target="#carousel-2" data-slide-to="5"></li>
+          <li data-target="#carousel-2" data-slide-to="1" class="indicator"></li>
+          <li data-target="#carousel-2" data-slide-to="2" class="indicator"></li>
+          <li data-target="#carousel-2" data-slide-to="3" class="indicator"></li>
+          <li data-target="#carousel-2" data-slide-to="4" class="indicator"></li>
+          <li data-target="#carousel-2" data-slide-to="5" class="indicator"></li>
         </ol>
-        <div class="carousel-inner" style="height: 100%">
+        <div class="carousel-inner" style="height: 100%" id="scnd_caro_inner">
           <div class="carousel-item active">
             <img
               class="d-block"
               src="images/carousel-images/livestrongCycling/livestrongCycling_Homepage.png"
               style="height: 100%; width: 100%;"
+              id="scnd_caro_slide-one"
               alt="Livestrong Cycling Homepage"
             />
           </div>
@@ -163,6 +164,7 @@
             class="d-block"
             src="images/carousel-images/livestrongCycling/livestrongCycling_AmericanTours.png"
             style="height: 100%; width: 100%;"
+            id="scnd_caro_slide-two"
             alt="Livestrong Cycling American Tours"
             />
           </div>
@@ -171,6 +173,7 @@
             class="d-block"
             src="images/carousel-images/livestrongCycling/livestrongCycling_EuropeTours.png"
             style="height: 100%; width: 100%;"
+            id="scnd_caro_slide-three"
             alt="Livestrong Cycling European Tours"
             />
           </div>
@@ -179,6 +182,7 @@
             class="d-block"
             src="images/carousel-images/livestrongCycling/livestrongCycling_ExerciseCalc.png"
             style="height: 100%; width: 100%;"
+            id="scnd_caro_slide-four"
             alt="Livestrong Cycling Exercise Calculator"
             />
           </div>
@@ -187,6 +191,7 @@
             class="d-block"
             src="images/carousel-images/livestrongCycling/livestrongCycling_Links.png"
             style="height: 100%; width: 100%;"
+            id="scnd_caro_slide-five"
             alt="Livestrong Cycling Links"
             />
           </div>
@@ -195,6 +200,7 @@
             class="d-block"
             src="images/carousel-images/livestrongCycling/livestrongCycling_Register.png"
             style="height: 100%; width: 100%;"
+            id="scnd_caro_slide-six"
             alt="Livestrong Cycling Registration"
             />
           </div>
@@ -240,6 +246,69 @@
     }
   };
 
+  const ptcRideShareViewLoad = (e) => {
+    const background = document.getElementsByClassName("popup__background").item(0);
+    const content = document.getElementsByClassName("popup__content").item(0);
+    $(".indicator").removeClass("active");
+    $("#carousel-2 .carousel-item").removeClass("active");
+    document.getElementById('scnd_caro_indicators').firstElementChild.classList.add("active");
+    document.getElementById('scnd_caro_inner').firstElementChild.classList.add("active");
+
+    document.getElementById("scnd_caro_header").innerHTML = "Pittsburgh Technical College RideShare Service"
+    document.getElementById("scnd_caro_slide-one").src = "images/carousel-images/ptcRideShare/ptcRideShare_HomeMenu.png"
+    document.getElementById("scnd_caro_slide-one").alt = "Pittsburgh Technical College RideShare Home Menu"
+    document.getElementById("scnd_caro_slide-two").src = "images/carousel-images/ptcRideShare/ptcRideShare_UserLogin.png"
+    document.getElementById("scnd_caro_slide-two").alt = "Pittsburgh Technical College RideShare Login Menu"
+    document.getElementById("scnd_caro_slide-three").src = "images/carousel-images/ptcRideShare/ptcRideShare_UserRegister.png"
+    document.getElementById("scnd_caro_slide-three").alt = "Pittsburgh Technical College RideShare Register Menu"
+    document.getElementById("scnd_caro_slide-four").src = "images/carousel-images/ptcRideShare/ptcRideShare_RequestARide.png"
+    document.getElementById("scnd_caro_slide-four").alt = "Pittsburgh Technical College RideShare Request A Ride Menu"
+    document.getElementById("scnd_caro_slide-five").src = "images/carousel-images/ptcRideShare/ptcRideShare_DriverApplication.png"
+    document.getElementById("scnd_caro_slide-five").alt = "Pittsburgh Technical College RideShare Driver Application"
+    document.getElementById("scnd_caro_slide-six").src = "images/carousel-images/ptcRideShare/ptcRideShare_AdminMenu.png"
+    document.getElementById("scnd_caro_slide-six").alt = "Pittsburgh Technical College RideShare Admin Menu"
+
+
+    if (background.getAttribute("style") == "visibility: visible") {
+      background.setAttribute("style", "visibility: hidden");
+      content.setAttribute("style", "visibility: hidden");
+    } else {
+      background.setAttribute("style", "visibility: visible");
+      content.setAttribute("style", "visibility: visible");
+    }
+  };
+
+  const livestrongCyclingViewLoad = (e) => {
+    const background = document.getElementsByClassName("popup__background").item(0);
+    const content = document.getElementsByClassName("popup__content").item(0);
+    $(".indicator").removeClass("active");
+    $("#carousel-2 .carousel-item").removeClass("active");
+    document.getElementById('scnd_caro_indicators').firstElementChild.classList.add("active");
+    document.getElementById('scnd_caro_inner').firstElementChild.classList.add("active");
+
+    document.getElementById("scnd_caro_slide-one").src = "images/carousel-images/livestrongCycling/livestrongCycling_Homepage.png"
+    document.getElementById("scnd_caro_slide-one").alt = "Livestrong Cycling Homepage"
+    document.getElementById("scnd_caro_slide-two").src = "images/carousel-images/livestrongCycling/livestrongCycling_AmericanTours.png"
+    document.getElementById("scnd_caro_slide-two").alt = "Livestrong Cycling American Tours"
+    document.getElementById("scnd_caro_slide-three").src = "images/carousel-images/livestrongCycling/livestrongCycling_EuropeTours.png"
+    document.getElementById("scnd_caro_slide-three").alt = "Livestrong Cycling European Tours"
+    document.getElementById("scnd_caro_slide-four").src = "images/carousel-images/livestrongCycling/livestrongCycling_ExerciseCalc.png"
+    document.getElementById("scnd_caro_slide-four").alt = "Livestrong Cycling Exercise Calculator"
+    document.getElementById("scnd_caro_slide-five").src = "images/carousel-images/livestrongCycling/livestrongCycling_Links.png"
+    document.getElementById("scnd_caro_slide-five").alt = "Livestrong Cycling Links"
+    document.getElementById("scnd_caro_slide-six").src = "images/carousel-images/livestrongCycling/livestrongCycling_Register.png"
+    document.getElementById("scnd_caro_slide-six").alt = "Livestrong Cycling Registration"
+
+
+    if (background.getAttribute("style") == "visibility: visible") {
+      background.setAttribute("style", "visibility: hidden");
+      content.setAttribute("style", "visibility: hidden");
+    } else {
+      background.setAttribute("style", "visibility: visible");
+      content.setAttribute("style", "visibility: visible");
+    }
+  };
+
   function stopPropagation(evt) {
     if (typeof evt.stopPropagation == "function") {
       evt.stopPropagation();
@@ -255,9 +324,16 @@
     stopPropagation(evt);
   });
 
-  $(".ourAussiesView").click(function (evt) {
+  $(".livestrongCyclingView").click(function (evt) {
     if (evt.target != this) return false;
-    clickMe();
+    livestrongCyclingViewLoad();
+    evt = evt || window.event;
+    stopPropagation(evt);
+  });
+
+  $(".ptcRideShareView").click(function (evt) {
+    if (evt.target != this) return false;
+    ptcRideShareViewLoad();
     evt = evt || window.event;
     stopPropagation(evt);
   });

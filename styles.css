@@ -93,7 +93,20 @@ body {
   height: 100%;
 }
 
-.ourAussiesView {
+.indicator {
+  background: rgba(255, 46, 109, 0.435) !important;
+}
+.indicator.active {
+  background: rgba(255, 46, 109, 0.831) !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(34%) sepia(111%) saturate(7286%) hue-rotate(326deg)
+    brightness(107%) contrast(104%);
+}
+
+.livestrongCyclingView {
   background: transparent;
   position: absolute;
   cursor: help;
@@ -105,6 +118,20 @@ body {
   left: 0px;
   z-index: 16;
 }
+
+.ptcRideShareView {
+  background: transparent;
+  position: absolute;
+  cursor: help;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 16;
+}
+
 .popup__background {
   background-color: rgba(0, 0, 0, 0.8);
   min-height: 100vh;
