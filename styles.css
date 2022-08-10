@@ -377,7 +377,7 @@ div.row.popup__toprow > h2 {
     }
     .text-box,
     .text-box > span {
-      visibility: hidden;
+      display: none;
     }
   }
 
