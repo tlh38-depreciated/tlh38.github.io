@@ -228,6 +228,7 @@ div.row.popup__toprow > h2 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  line-height: normal;
 }
 
 @media screen {
